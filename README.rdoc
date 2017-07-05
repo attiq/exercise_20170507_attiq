@@ -1,0 +1,126 @@
+== Getting Started
+
+1. User can add a new Group Event by sending a POST request to the URL
+
+ http://localhost:3000/api
+
+ Along with flolowing json data
+
+  {
+    "event": {
+      "name": "First Event",
+      "description": "Enter the body of the messag.",
+      "start_at": "07/07/2017",
+      "end_at": "09/07/2017",
+      "location": "lahore, pakistan",
+      "is_draft": "0",
+      "is_published": "1"
+    }
+  }
+
+ name = The name of the gruop event
+ description = Some berife description of the group event
+ start_at = Date on with event going to be started
+ end_at = Date on with event is going to an end
+ location = Location of event on with event is going to be held
+ is_draft = '0' if NOT required to save as draft. '1' if required to save as Draft with partial data
+ is_published = '0' if not required to publish. '1' if required to publish the event with complete set of data.
+
+ User will get the following JSON response
+
+  {
+    "status": 200,
+    "message": "Thank You. Group Event was successfully Created.",
+    "event":{
+      "created_at": "2017-07-05T14:14:21Z",
+      "description": "Enter the body of the messag.",
+      "end_at": "09/07/2017",
+      "id": 1,
+      "is_achived": false,
+      "is_draft": false,
+      "is_published": true,
+      "location": "lahore, pakistan",
+      "name": "First Event",
+      "start_at": "07/07/2017",
+      "updated_at": "2017-07-05T14:14:21Z"
+      }
+  }
+
+
+
+2. User can Modify an Existing Group Event by sending a PUT request to the URL
+
+ http://localhost:3000/api/:id
+
+ Along with flolowing json data
+
+  {
+    "event": {
+      "name": "Edited First Event",
+      "description": "Enter the body of the messag.",
+      "start_at": "07/07/2017",
+      "end_at": "09/07/2017",
+      "location": "lahore, pakistan",
+      "is_draft": "0",
+      "is_published": "1"
+    }
+  }
+
+ User will get the following JSON response
+
+  {
+    "status": 200,
+    "message": "Thank You. Group Event was successfully Created.",
+    "event":{
+      "created_at": "2017-07-05T14:14:21Z",
+      "description": "Enter the body of the messag.",
+      "end_at": "09/07/2017",
+      "id": 1,
+      "is_achived": false,
+      "is_draft": false,
+      "is_published": true,
+      "location": "lahore, pakistan",
+      "name": "Edited First Event",
+      "start_at": "07/07/2017",
+      "updated_at": "2017-07-05T14:14:21Z"
+      }
+  }
+
+
+2. User can Remove an Existing Group Event by sending a DELETE request to the URL
+
+ http://localhost:3000/api/:id
+
+ Along with flolowing json data
+
+  {
+    "event": {
+      "name": "First Event",
+      "description": "Enter the body of the messag.",
+      "start_at": "07/07/2017",
+      "end_at": "09/07/2017",
+      "location": "lahore, pakistan",
+      "is_draft": "0",
+      "is_published": "1"
+    }
+  }
+
+ User will get the following JSON response
+
+  {
+    "status": 200,
+    "message": "Thank You. Group Event was successfully Created.",
+    "event":{
+      "created_at": "2017-07-05T14:14:21Z",
+      "description": "Enter the body of the messag.",
+      "end_at": "09/07/2017",
+      "id": 1,
+      "is_achived": true,
+      "is_draft": false,
+      "is_published": true,
+      "location": "lahore, pakistan",
+      "name": "First Event",
+      "start_at": "07/07/2017",
+      "updated_at": "2017-07-05T14:14:21Z"
+      }
+  }
